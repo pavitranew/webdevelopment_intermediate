@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>START</title>
+  <title>START!</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+  
+  #main {
+    position: sticky;
+    top: 0px;
+  }
+</style>
 </head>
 <body>
 
@@ -46,11 +53,56 @@
 
   </div>
 
-<script>
+  <script src="js/navitems.js"></script>
+
+  <script>
+
+    const nav = document.getElementById('main');
+    nav.innerHTML = '';
+
+    const markup = `
+    <ul>
+    ${navItems.map(
+      function(listItem){
+        return `<li><a href="${listItem.link}">${listItem.label}</a></li>`
+      }
+      ).join('')}
+    </ul>
+    `
+    nav.innerHTML = markup
 
 
-</script>
+
+  </script>
+
+
 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

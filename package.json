@@ -1,0 +1,22 @@
+{
+  "name": "session-1",
+  "version": "1.0.0",
+  "description": "Today we are introducing JavaScript arrays, objects, template strings, functions and DOM scriptng. The CSS flexbox module is also introduced.",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --browser \"google chrome\" --server \"app\"  --files \"app\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/front-end-intermediate/session-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/front-end-intermediate/session-1/issues"
+  },
+  "homepage": "https://github.com/front-end-intermediate/session-1#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
