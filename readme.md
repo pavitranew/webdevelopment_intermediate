@@ -69,7 +69,10 @@ Browser Sync [CLI documentation](https://www.browsersync.io/docs/command-line)
 #### From the slack chat -  for Windows users
 
 For my fellow Window users! This script style worked for me when trying to "start" browser sync:
+
+```sh
 "start": "browser-sync start --browser \"chrome.exe\" --server \"app\" --files \"app\"" 
+```
 
 Essentially, it requires '.exe' for chrome and uses delineated double quotes - \"
 
