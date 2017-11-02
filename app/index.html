@@ -6,11 +6,18 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
   
-  #main {
+/*  #main {
     position: sticky;
     top: 0px;
-  }
-</style>
+    }*/
+
+    body.fixed-nav nav {
+      position: fixed;
+      top: 0;
+      box-shadow:0 5px 3px rgba(0,0,0,0.1);
+    }
+
+  </style>
 </head>
 <body>
 
@@ -62,15 +69,30 @@
 
     const markup = `
     <ul>
-    ${navItems.map(
-      function(navItem){
-        return `<li><a href="${navItem.link}">${navItem.label}</a></li>`
-      }
+    ${navItems.map( navItem => `<li><a href="${navItem.link}">${navItem.label}</a></li>`
       ).join('')}
     </ul>
     `
     nav.innerHTML = markup
 
+
+    let topOfNav = nav.offsetTop;
+  
+    window.addEventListener('scroll', fixNav);
+
+function fixNav() {
+  if(window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
+}
+
+const logo = document.querySelector('#main ul li');
+logo.classList.add('logo');
+logo.firstChild.innerHTML = '<img src="img/logo.svg" />';
 
 
   </script>

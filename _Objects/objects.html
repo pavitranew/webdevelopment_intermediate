@@ -4,28 +4,63 @@
   <title>Objects</title>
 </head>
 <body>
-<script>
+  <script>
 
-const me = {
-  first: 'Daniel',
-  last: 'Deverell',
-  job: 'web designer',
-  links: {
-    social: {
-      twitter: '@dannyboynyc',
-      facebook: 'https://facebook.com/danieldeverell'
-    },
-    web: {
-      blog: 'http://daniel.deverell.com'
+    const me = {
+      first: 'Daniel',
+      last: 'Deverell',
+      job: 'web designer',
+      links: {
+        social: {
+          twitter: '@dannyboynyc',
+          facebook: 'https://facebook.com/danieldeverell'
+        },
+        web: {
+          blog: 'http://daniel.deverell.com'
+        }
+      }
     }
-  }
-}
 
-  const first = me.first;
-  const last = me.last;
+    // const first = me.first;
+    // const last = me.last;
+    const { first, last } = me;
+    // const twitter = me.links.social.twitter
+    // const { twitter, facebook } = me.links.social;
+    const { twitter:tw, facebook:fb } = me.links.social;
 
-  console.log(first)
+    console.log(first)
 
-</script>
+    const content = `
+    <div class="person">
+    <h2>
+    ${me.first} ${me.last}:
+    <span class="job">${me.job}</span>
+    </h2>
+    <p class="twitter">Twitter: ${me.links.social.twitter}</p>
+    <p class="blog">Blog: ${me.links.web.blog}</p>
+    </div>
+    `
+
+    document.body.innerHTML = content;
+
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
