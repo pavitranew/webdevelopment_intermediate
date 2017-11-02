@@ -63,8 +63,8 @@
     const markup = `
     <ul>
     ${navItems.map(
-      function(listItem){
-        return `<li><a href="${listItem.link}">${listItem.label}</a></li>`
+      function(navItem){
+        return `<li><a href="${navItem.link}">${navItem.label}</a></li>`
       }
       ).join('')}
     </ul>
