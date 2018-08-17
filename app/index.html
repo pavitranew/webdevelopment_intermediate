@@ -5,37 +5,15 @@
   <meta charset="UTF-8">
   <title>START</title>
   <link rel="stylesheet" href="css/styles.css">
-
+  
 </head>
 
 <body>
-
+ 
   <header>
     <h1>Now on the app store!</h1>
   </header>
-
-  <nav id="main">
-    <ul>
-      <li>
-        <a href="#">LOGO</a>
-      </li>
-      <li>
-        <a href="#">Link</a>
-      </li>
-      <li>
-        <a href="#">Link</a>
-      </li>
-      <li>
-        <a href="#">Link</a>
-      </li>
-      <li>
-        <a href="#">Link</a>
-      </li>
-      <li>
-        <a href="#">Link</a>
-      </li>
-    </ul>
-  </nav>
+  <nav id="main"></nav>
 
   <div class="site-wrap">
 
@@ -58,12 +36,62 @@
     <p id="connect"><em>Connect</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi, repellat laboriosam est.</p>
 
     <p id="desktop"><em>Desktop</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi, repellat laboriosam est.</p>
-
   </div>
+  <script >
+ const navItemsArray = ['LOGO', 'Watchlist', 'Research', 'Markets', 'Workbook', 'Connect', 'Desktop', 'FAQ'];
 
-  <script src="js/navitems.js"></script>
+const navItems = [
+    {
+      label: 'LOGO',
+      link: '#'
+    },
+    {
+      label: 'Watchlist',
+      link: '#watchlist'
+    },
+    {
+      label: 'Research',
+      link: '#research'
+    },
+    {
+      label: 'Markets',
+      link: '#markets'
+    },
+    {
+      label: 'Workbook',
+      link: '#workbook'
+    },
+    {
+      label: 'Connect',
+      link: '#connect'
+    },
+    {
+      label: 'Desktop',
+      link: '#desktop'
+    },
+    {
+      label: 'FAQ',
+      link: '#faq'
+    }
+    ];
 
-  <script src="js/myscripts.js"></script>
+
+const nav = document.getElementById('main');
+nav.innerHTML = ''
+
+const navList = document.createElement('ul');
+nav.appendChild(navList);
+
+for (let i=0; i < navItemsArray.length; i++ ){
+  let listItem = document.createElement('li')
+  let linkText = navItemsArray[i]
+  listItem.innerHTML = '<a href="#">' + linkText + '</a>'
+  navList.appendChild(listItem)
+}
+
+    </script>
+    
+    <script src="js/myscripts.js"></script>
 
 </body>
 
