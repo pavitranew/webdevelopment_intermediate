@@ -53,3 +53,34 @@ const inventors = [
 { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
 { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
 ];
+
+const homenavItems = [
+  {
+    label: 'LATEST NEWS',
+    link: '#latestnews'
+  },
+  {
+    label: 'ESW-NYC',
+    link: '#eswnyc'
+  },
+  {
+    label: 'TEAM',
+    link: '#team'
+  },
+  {
+    label: 'PROJECTS',
+    link: '#projects'
+  },
+  {
+    label: 'CONTACT US',
+    link: '#contactus'
+  },
+  {
+    label: 'PARTICIPATE',
+    link: '#participate'
+  },
+   {
+    label: 'DONATE',
+    link: '#donate'
+  }
+  ];

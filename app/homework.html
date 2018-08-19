@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>START</title>
+  <link rel="stylesheet" href="css/styles-DONE.css">
+</head>
+
+<body>
+  
+  <header>
+    <h1>Now on the app store!</h1>
+  </header>
+  
+  <nav id="homemain" class="site-nav">
+    <ul>
+      <li class="active"><a href="#0">Recipes</a></li>
+      <li><a href="#0">Reviews</a></li>
+      <li><a href="#0">Delivery</a></li>
+    </ul>
+  </nav>
+ <div class="site-wrap">
+    <h4>Homework</h4>
+  
+    <p>The items below all come from today's work on the Basic DOM scripting page. You should attempt each one if possible.</p>
+  
+    <ol>
+      <li>Create an object with a new set of labels and links for the site-nav li's above and use the JavaScript techniques we covered today to dynamically generate the nav menu</li>
+  
+      <li>Use classList to assign the active class to a link when clicked (be sure to remove it from the previously highlighted link as well)</li>
+  
+      <li>Add some paragraphs to the page and make the navigation sticky</li>
+    </ol>
+  
+    <p>Post your efforts to the class Slack Channel and a web server (if you don't have I can provide)</p>
+    <p id="latestnews"><em>Latest News</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="eswnyc"><em>ESW-NYC</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="team"><em>Team</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="projects"><em>Projects</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="contactus"><em>Contact US</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="participate"><em>Participate</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+    <p id="donate"><em>Donate</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore tempora rerum, est autem cupiditate, corporis a qui libero ipsum delectus quidem dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.</p>
+  </div>
+  
+  
+  <script src="js/navitems.js"></script>
+  <script src="js/myscripts.js"></script>
+  <script>
+  const nav = document.getElementById('homemain');
+  const homemarkup = `<ul>${homenavItems.map( navi => `<li> <a href="${navi.link}"> ${navi.label} </a> </li> `).join("")}
+                 </ul>`;
+  nav.innerHTML = homemarkup;
+  
+  let topOfNav = nav.offsetTop;
+      window.addEventListener('scroll', fixNav);
+ 
+      function fixNav() {
+  if(window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
+}
+  </script>
+</body>
+
+</html>

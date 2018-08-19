@@ -15,6 +15,7 @@
   </header>
   <nav id="main"></nav>
 
+
   <div class="site-wrap">
 
     <h2>Download Our New App</h2>
@@ -37,59 +38,62 @@
 
     <p id="desktop"><em>Desktop</em> lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi, repellat laboriosam est.</p>
   </div>
-  <script >
- const navItemsArray = ['LOGO', 'Watchlist', 'Research', 'Markets', 'Workbook', 'Connect', 'Desktop', 'FAQ'];
 
-const navItems = [
-    {
-      label: 'LOGO',
-      link: '#'
-    },
-    {
-      label: 'Watchlist',
-      link: '#watchlist'
-    },
-    {
-      label: 'Research',
-      link: '#research'
-    },
-    {
-      label: 'Markets',
-      link: '#markets'
-    },
-    {
-      label: 'Workbook',
-      link: '#workbook'
-    },
-    {
-      label: 'Connect',
-      link: '#connect'
-    },
-    {
-      label: 'Desktop',
-      link: '#desktop'
-    },
-    {
-      label: 'FAQ',
-      link: '#faq'
-    }
-    ];
+   <script src="js/navitems.js"></script>
 
+  <script>
+      const nav = document.getElementById('main');
+      const markup = `
+          <ul>
+            ${navItems.map( navItem => `<li><a href="${navItem.link}">${navItem.label}</a></li>`).join('')}
+          </ul>
+          `;
+      nav.innerHTML = markup;
 
-const nav = document.getElementById('main');
-nav.innerHTML = ''
-
-const navList = document.createElement('ul');
-nav.appendChild(navList);
-
-for (let i=0; i < navItemsArray.length; i++ ){
-  let listItem = document.createElement('li')
-  let linkText = navItemsArray[i]
-  listItem.innerHTML = '<a href="#">' + linkText + '</a>'
-  navList.appendChild(listItem)
+      let topOfNav = nav.offsetTop;
+      window.addEventListener('scroll', fixNav);
+ 
+      function fixNav() {
+  if(window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.classList.remove('fixed-nav');
+    document.body.style.paddingTop = 0;
+  }
 }
+      
+      //logo
+      const logo = document.querySelector('#main ul li');
+      logo.classList.add('logo');
+      logo.firstChild.innerHTML = '<img src="img/logo.svg" />';
 
-    </script>
+      //fake content
+      const sitewrap = document.querySelector('.site-wrap');
+
+      //link
+   
+      const navTest = document.querySelectorAll('#main ul li a');
+      for (let i=0; i<navTest.length; i++){
+        navTest[i].addEventListener('click', prepContent)
+      }
+
+      function prepContent(e){
+        if (this.hash == "#workbook"){
+          const header = fakeContent[0].header;
+          const content = fakeContent[0].content;
+          sitewrap.innerHTML = `
+            <h2>${header}</h2>
+            <p>${content}</p>
+          `;
+          e.preventDefault();
+        }
+      }
+
+     
+      
+
+      </script>
     
     <script src="js/myscripts.js"></script>
 
